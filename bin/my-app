@@ -1,0 +1,2 @@
+#!/bin/bash
+docker run -i --rm -p 8080:8080 -v $(dirname $(realpath -s $0))/../data:/opt/my-app/data my-reg.example.com/my-group/my-app "$@"

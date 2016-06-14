@@ -1,0 +1,7 @@
+#!/bin/bash
+
+docker tag my-reg.example.com/my-group/my-app my-app-old # Keep the old image around as cache for the build
+docker build -t my-reg.example.com/my-group/my-app .
+[ $? -ne 0 ] && exit
+docker rmi my-app-old
+
